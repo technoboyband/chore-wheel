@@ -11,8 +11,8 @@ const AppContainer = () => {
         setChores([...chores, chore]);
     }
 
-    const handleRemoveChores = () => {
-
+    const handleRemoveChores = (index:string) => {
+        setChores(chores.filter(i => index !== i));
     }
 
     const handleShuffleChores = () => {
@@ -21,7 +21,7 @@ const AppContainer = () => {
 
     return (<div>
         <Header></Header>
-        <Chores></Chores>
+        <Chores chores={chores} addChores={handleAddChores}></Chores>
         <Wheel></Wheel>
     </div>);
 }
